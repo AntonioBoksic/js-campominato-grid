@@ -1,4 +1,4 @@
-// creazione variabile container generale
+// creazione variabile container generale dove inserire contenitore griglia
 const centerContainer = document.getElementById("centerContainer");
 
 // creazione bottone
@@ -9,27 +9,34 @@ buttonPlay.addEventListener("click",
 function() {
 
     // crea contenitore griglia
-    centerContainer.innerHTML += `<div id="squaresContainer"> </div>`
+    const squaresContainer = document.createElement("div");
+    squaresContainer.classList.add("squaresContainer");
+    centerContainer.append(squaresContainer);
+    //centerContainer.innerHTML += `<div id="squaresContainer"> </div>`
     
     for (let i = 1; i <= 100; i++) {
            
 
         // creazione contenuti griglia 
-        const square = `<div class="square">
-        ${i}
-        </div>`;
+
+        // const square = `<div class="square">
+        // ${i}
+        // </div>`;
+
+        const square = createSquare("div" , "square")
 
             
- 
-        squaresContainer.innerHTML += square;     
+        square.append(i)
+        squaresContainer.append(square)    
         
-        // 
+       
         square.addEventListener("click",
-        function() {
-          square.classList.add("blue")
+       function() {
+       square.classList.add("blue")
+       console.log(square.innerHTML)
         }
         );
-        //
+        
     };
 
 
@@ -37,3 +44,10 @@ function() {
 );
 
 // quando utente clicca su cella questa si illumina
+
+// FUNZIONI 
+function createSquare(tagType , classToAdd){
+    const newElement = document.createElement(tagType);
+    newElement.classList.add(classToAdd);
+    return newElement;
+}
