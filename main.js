@@ -1,15 +1,27 @@
-// creazione variabile container in cui andranno le immagini
-const squaresContainer = document.getElementById("squaresContainer");
+// creazione variabile container generale
+const centerContainer = document.getElementById("centerContainer");
 
 
 
+// comparsa griglia sul click
+const buttonPlay = document.getElementById("buttonPlay");
 
-for (let i = 1; i <= 100; i++) {
+buttonPlay.addEventListener("click",
+function() {
+
+    centerContainer.innerHTML += `<div id="squaresContainer"> </div>`
+    
+    for (let i = 1; i <= 100; i++) {
            
-    const square = `<div class="square">
-    ${i}
-    </div>`;
-            
-    squaresContainer.innerHTML += square;
-            
-};
+
+        // creazione contenuti griglia 
+        const square = `<div class="square">
+        ${i}
+        </div>`;
+        
+        
+        squaresContainer.innerHTML += square;     
+    };
+
+    }
+);
