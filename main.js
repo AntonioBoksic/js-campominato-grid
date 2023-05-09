@@ -1,8 +1,6 @@
 // creazione variabile container generale
 const centerContainer = document.getElementById("centerContainer");
 
-
-
 // creazione bottone
 const buttonPlay = document.getElementById("buttonPlay");
 
@@ -20,10 +18,22 @@ function() {
         const square = `<div class="square">
         ${i}
         </div>`;
-        
-        
+
+            
+ 
         squaresContainer.innerHTML += square;     
+        
+        // 
+        square.addEventListener("click",
+        function() {
+          square.classList.add("blue")
+        }
+        );
+        //
     };
+
 
     }
 );
+
+// quando utente clicca su cella questa si illumina

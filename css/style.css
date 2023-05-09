@@ -38,3 +38,7 @@
 .inactive {
     display: none;
 }
+
+.blue {
+    background-color: blue;
+}
