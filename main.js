@@ -3,12 +3,14 @@ const centerContainer = document.getElementById("centerContainer");
 
 
 
-// comparsa griglia sul click
+// creazione bottone
 const buttonPlay = document.getElementById("buttonPlay");
 
+// quando clicco bottone:
 buttonPlay.addEventListener("click",
 function() {
 
+    // crea contenitore griglia
     centerContainer.innerHTML += `<div id="squaresContainer"> </div>`
     
     for (let i = 1; i <= 100; i++) {
